@@ -1,0 +1,6 @@
+pandas==2.2.3
+numpy==2.2.0
+streamlit
+pickle
+matplotlib==3.10.0
+rensorFlow==2.18.0
