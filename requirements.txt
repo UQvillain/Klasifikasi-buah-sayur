@@ -2,4 +2,4 @@ pandas==2.2.3
 numpy==2.2.0
 streamlit
 matplotlib==3.10.0
-rensorFlow==2.18.0
+tensorFlow==2.18.0
