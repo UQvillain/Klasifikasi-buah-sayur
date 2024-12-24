@@ -4,9 +4,15 @@ import streamlit as st
 import os
 import pickle
 
-# Load the model from the .sav file
+# Path to the model file
+model_path = 'Klasifikasi_gambar.sav'
 
-    model = pickle.load(open(Klasifikasi_gambar.sav))
+# Check if the model file exists before loading
+if os.path.exists(model_path):
+    with open(model_path, 'rb') as file:
+        model = pickle.load(file)
+else:
+    st.error(f"Model file '{model_path}' not found. Please ensure it is in the correct directory.")
 
 # List of categories
 data_cat = ['apple', 'banana', 'bell pepper', 'cabbage', 'carrot', 'corn', 'cucumber', 
@@ -23,7 +29,7 @@ st.set_page_config(page_title="Image Classifier", page_icon="📸", layout="cent
 
 # Main title
 st.title("📸 Pengklasifikasi Gambar Sayuran & Buah")
-st.markdown("Upload gambar atau ambil foto untuk mengklasifikasikan apakah itu sayuran atau buah!")
+st.markdown("Unggah gambar atau ambil foto untuk mengklasifikasikan apakah itu sayuran atau buah!")
 
 # Sidebar for image upload
 st.sidebar.header("📂 Unggah Gambar")
@@ -71,6 +77,6 @@ if image is not None:
 else:
     st.info("Silakan unggah gambar atau ambil foto untuk melihat hasil prediksi.")
 
-# Footer
+# Footer with correct GitHub link
 st.markdown("---")
 st.markdown("Developed by [Kelompok Sauqi, Ayub, Fulvian](https://github.com/your-profile) | Powered by TensorFlow & Streamlit")
