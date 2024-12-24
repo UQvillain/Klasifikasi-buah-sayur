@@ -6,7 +6,7 @@ import pickle
 
 # Load the model from the .sav file
 
-    model = pickle.load(open(Klasifikasi+gambar.sav))
+    model = pickle.load(open(Klasifikasi_gambar.sav))
 
 # List of categories
 data_cat = ['apple', 'banana', 'bell pepper', 'cabbage', 'carrot', 'corn', 'cucumber', 
